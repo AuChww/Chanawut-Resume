@@ -1,44 +1,78 @@
+"use client"
 import University from "../Border/University"
 import Stack from "../Border/Stack"
 import Intern from "../Border/Intern"
 import Intern2 from "../Border/Intern2"
 import Image from "next/image"
+import { useState, useEffect } from 'react';
+import { useRouter } from "next/navigation"
+import { motion } from "framer-motion";
+
+const LoadingAnimation = () => (
+    <div className="fixed inset-0 flex items-center justify-center bg-zinc-900">
+      <div className="animate-spin rounded-full h-60 w-60 border-t-4 border-b-4 border-white text black"></div>
+      <div className="absolute animate-fade-left animate-once animate-duration-[1500ms] animate-ease-linear text-4xl">Chanawut</div>
+    </div>
+  );
 
 export default function Main(){
+    const [isLoading, setLoading] = useState(true);
+    const router = useRouter();
+
+    useEffect(() => {
+        const delayTimer = setTimeout(() => {
+        setLoading(false);
+        }, 1500);
+
+        return () => clearTimeout(delayTimer);
+    }, []);
+
+    const handleStackClick = () => {
+        router.push('/pages/Stack'); // Navigate to /Stack
+    };
+
+    const handleUniversityClick = () => {
+        router.push('/pages/University'); // Navigate to /Stack
+    };
+
+    const handleInternClick = () => {
+        router.push('/pages/Intern'); // Navigate to /Stack
+    };
+
     return(
-        <div>
-            <div className="z-0 absolute h-full w-[700px]"> 
-                <Image
-                    src="/images/Profile/Profile.jpg" 
-                    alt="Profile Image"
-                    layout="fill" 
-                    objectFit="cover" 
-                    className="animate-fade-left animate-once animate-duration-[2000ms] animate-ease-in-out"
-                />
-            </div>
-            <div className="z-10 absolute grid grid-cols-4 gap-20 w-full">  
-                <div className="mt-80 mx-auto">
-                {/* <Image
-                    src="/images/cat.jpg" 
-                    alt="Profile Image"
-                    width={300}
-                    height={300}
-                    className="animate-jump animate-infinite animate-duration-[1500ms] animate-ease-linear"
-                />
-                <Image
-                    src="/images/cat2.jpg" 
-                    alt="Profile Image"
-                    width={300}
-                    height={300} 
-                    className="animate-spin animate-infinite animate-duration-[3000ms] animate-ease-linear"
-                /> */}
-                    <div className="mt-60 mx-auto bg-zinc-900 text-white px-6 py-2 rounded-3xl animate-wiggle animate-infinite animate-ease-in-out ml-4 text-4xl">
-                        <div>Chanawut</div>
-                        <div>Wuttinun</div>
+        <div className="relative w-full h-screen">
+            {isLoading && <LoadingAnimation />} {/* Show loading animation */}
+
+            <div className={`transition-opacity absolute duration-1000 z-10 ${isLoading ? 'opacity-0' : 'opacity-100'} h-full w-full bg-zinc-600`}>
+                <div className="flex h-full">
+                    <div className="w-1/3 relative">
+                        <Image
+                            src="/images/Profile/Profile.jpg" 
+                            alt="Profile Image"
+                            layout="fill"
+                            objectFit="cover"
+                            className="animate-fade-right animate-once animate-duration-[2000ms] animate-delay-[1000ms] animate-ease-in-out"
+                        />
                     </div>
-                    <div className="  bg-zinc-700 px-6 py-2 rounded-3xl animate-wiggle animate-delay-500 animate-infinite animate-ease-in-out ml-4 text-md">
-                        <div className="text-3xl mb-2">Contact</div>
-                        <div className="flex">
+                    <div className="relative w-2/3 flex items-center justify-center">
+                        <div className="absolute inset-0 flex w-full">
+                            <div className={`h-full w-1/5 bg-zinc-900 animate-fade-left animate-once animate-duration-[1000ms] animate-delay-[1800ms]`}></div>
+                            <div className={`h-full w-1/5 bg-zinc-900 animate-fade-left animate-once animate-duration-[1000ms] animate-delay-[2100ms]`}></div>
+                            <div className={`h-full w-1/5 bg-zinc-900 animate-fade-left animate-once animate-duration-[1000ms] animate-delay-[2400ms]`}></div>
+                            <div className={`h-full w-1/5 bg-zinc-900 animate-fade-left animate-once animate-duration-[1000ms] animate-delay-[2700ms]`}></div>
+                            <div className={`h-full w-1/5 bg-zinc-900 animate-fade-left animate-once animate-duration-[1000ms] animate-delay-[3000ms]`}></div>
+                        </div>
+                    </div>
+                </div>
+                <div className="absolute top-0 left-0 z-10 w-full grid grid-cols-4 gap-20">
+                    <div className="mt-80 mx-auto">
+                        <div className="mt-60 mx-auto bg-zinc-900 text-white px-6 py-2 rounded-3xl animate-wiggle animate-infinite animate-ease-in-out ml-4 text-4xl">
+                            <div>Chanawut</div>
+                            <div>Wuttinun</div>
+                        </div>
+                        <div className="bg-zinc-700 px-6 py-2 rounded-3xl animate-wiggle animate-delay-500 animate-infinite animate-ease-in-out ml-4 text-md">
+                            <div className="text-3xl mb-2">Contact</div>
+                            <div className="flex">
                             <div>
                             <button
                             type="button"
@@ -99,16 +133,23 @@ export default function Main(){
                         </div>
                     </div>
                 </div>
-                <div className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[1500ms] animate-ease-in-out ml-4 text-4xl">
-                    <Stack />
-                </div>
-                <div className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[1300ms] animate-ease-in-out ml-4 text-4xl ">
-                    <University />
-                </div>
-                <div className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[1100ms] animate-ease-in-out ml-4 text-4xl ">
-                    <Intern2 />
-                </div>
+                <button className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[2600ms] animate-ease-in-out ml-4 text-4xl" onClick={handleStackClick}>
+                    <div className=" hover:scale-110 duration-300 h-full">
+                        <Stack />
+                    </div>
+                </button>
+                <button className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[2300ms] animate-ease-in-out ml-4 text-4xl ">
+                    <div className=" hover:scale-110 duration-300 h-full">
+                        <University />
+                    </div>
+                </button>
+                <button className="mt-20 h-[800px] animate-wiggle-more animate-once animate-duration-[2000ms] animate-ease-in-out ml-4 text-4xl ">
+                    <div className=" hover:scale-110 duration-300 h-full">
+                        <Intern2 />
+                    </div>
+                </button>
             </div>
+        </div>
         </div>
     )
 }
