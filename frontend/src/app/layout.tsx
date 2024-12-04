@@ -1,4 +1,5 @@
-"use client"
+"use client";
+
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -14,14 +15,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
-        <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -50 }}
-            transition={{ duration: 0.5 }}
-        >
-            {children}
-        </motion.div>
+        {children}
       </body>
     </html>
   );
