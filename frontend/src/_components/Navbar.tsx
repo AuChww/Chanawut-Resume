@@ -7,7 +7,7 @@ function Navbar() {
         <nav className="sticky">
             <div className="flex justify-between items-center">
                 <div className="mx-auto flex space-x-4 ">
-                    <Link href="/" className="inline-flex mx-auto text-white rounded-lg">
+                    <Link href="#main" className="inline-flex mx-auto text-white rounded-lg">
                         <div className="font-semibold lg:text-6xl md:text-5xl text-4xl">
                             AU
                         </div>

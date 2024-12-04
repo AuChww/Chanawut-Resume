@@ -52,7 +52,7 @@ export default function University() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6">
+        <div className="h-full bg-zinc-800 p-6 z-50">
             {/* Header Section */}
             <div className="flex justify-between mb-2">
                 <div></div>

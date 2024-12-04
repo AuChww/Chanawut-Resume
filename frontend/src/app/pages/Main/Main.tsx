@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
@@ -17,15 +17,63 @@ export default function Main() {
     // State for hover effects
     const [hoveredButton, setHoveredButton] = useState<string | null>(null);
 
-    const navigateToPage = (path: string) => {
-        router.push(`/pages/${path}`);
+    // Set up state to track visibility of each section
+    const [visibleSections, setVisibleSections] = useState({
+        Internship: false,
+        University: false,
+        Stack: false,
+    });
+
+    // Create an intersection observer to detect when sections become visible
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    // Set the visibility of each section based on intersection
+                    if (entry.isIntersecting) {
+                        setVisibleSections((prevState) => ({
+                            ...prevState,
+                            [entry.target.id]: true,
+                        }));
+                    } else {
+                        setVisibleSections((prevState) => ({
+                            ...prevState,
+                            [entry.target.id]: false,
+                        }));
+                    }
+                });
+            },
+            { threshold: 0.5 } // Trigger when 50% of the section is visible
+        );
+
+        // List of section IDs
+        const sectionIds = ["Internship", "University", "Stack"];
+        sectionIds.forEach((id) => {
+            const section = document.getElementById(id);
+            if (section) observer.observe(section);
+        });
+
+        return () => {
+            sectionIds.forEach((id) => {
+                const section = document.getElementById(id);
+                if (section) observer.unobserve(section);
+            });
+        };
+    }, []);
+
+    const scrollToSection = (id: string) => {
+        const element = document.getElementById(id);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
     };
 
     return (
         <div className="relative h-screen bg-gradient-to-b from-gray-800 to-black text-white snap-y snap-mandatory overflow-y-scroll">
             {/* Main Section */}
             <section id="main" className="h-screen grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center snap-start flex">
-                <div className="text-center lg:mt-8 md:mt-8 mt-80 z-10">
+                <div className={`text-center lg:mt-8 md:mt-8 mt-80 z-10 `}
+                >
                     <h1 className="text-4xl font-bold">Chanawut Wuttinun</h1>
                     <p className="mt-4">Full Stack Developer | Passionate Learner</p>
                     <div className="flex justify-center space-x-4 mt-6">
@@ -60,7 +108,7 @@ export default function Main() {
                             </div>
                         </Link>
                     </div>
-
+                    <p className="mt-1 text-zinc-500">Adjust horizontal to see more.</p>
                 </div>
                 <div className="h-full md:relative absolute items-center justify-center flex lg:relative">
                     <Image
@@ -71,26 +119,90 @@ export default function Main() {
                         className="h-full w-full object-cover"
                     />
                 </div>
-
             </section>
 
-
             {/* Stack Section */}
-            <section id="stack" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
+            <section id="Stack" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
                 <div className="lg:relative md:relative absolute"></div>
                 <Stack />
             </section>
 
             {/* University Section */}
-            <section id="university" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
-                <div className="lg:relative md:relative absolute"></div>
+            <section id="University" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 ${visibleSections.University ? "opacity-100 animate-fade-left" : "opacity-0"
+                        }`}
+                >
+                    <Image
+                        src="/images/Profile/Profile.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className="h-full w-full object-cover"
+                    />
+                </div>
                 <University />
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700`}
+                >
+                    <Image
+                        src="/images/University/Byenior1.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-1/3 w-full object-cover ${visibleSections.University ? "opacity-100 animate-fade-right" : "opacity-0"}`}
+                    />
+                    <Image
+                        src="/images/University/Freshy2.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-1/3 w-full object-cover ${visibleSections.University ? "opacity-100 animate-fade-left" : "opacity-0"}`}
+                    />
+                    <Image
+                        src="/images/University/Jimjoom1.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-1/3 w-full object-cover ${visibleSections.University ? "opacity-100 animate-fade-right" : "opacity-0"}`}
+                    />
+                </div>
             </section>
 
             {/* Intern Section */}
-            <section id="intern" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
-                <div className="lg:relative md:relative absolute"></div>
+            <section id="Internship" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 ${visibleSections.Internship ? "opacity-100 animate-fade-up" : "opacity-0"
+                        }`}
+                >
+                    <Image
+                        src="/images/Intern/Intern1.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className="h-auto w-full object-cover"
+                    />
+                </div>
                 <Intern />
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 
+                        `}
+                >
+                    <Image
+                        src="/images/Intern/Intern3.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-2/5 w-full object-cover ${visibleSections.Internship ? "opacity-100 animate-fade-right" : "opacity-0"}`}
+                    />
+                    <Image
+                        src="/images/Intern/Intern2.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-3/5 w-full object-cover ${visibleSections.Internship ? "opacity-100 animate-fade-left" : "opacity-0"}`}
+                    />
+                </div>
             </section>
 
             {/* Side Navigation */}
@@ -101,7 +213,7 @@ export default function Main() {
                         className="relative group"
                         onMouseEnter={() => setHoveredButton(section)}
                         onMouseLeave={() => setHoveredButton(null)}
-                        onClick={() => navigateToPage(section)}>
+                        onClick={() => scrollToSection(section)}>
                         {/* Button */}
                         <button className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-600 transition shadow-lg flex items-center justify-center">
                             {/* Set icon based on section */}
