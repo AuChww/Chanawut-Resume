@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import University from "../Border/University";
@@ -12,7 +11,6 @@ import { GiJourney } from "react-icons/gi";
 import { FaBookOpen } from "react-icons/fa";
 
 export default function Main() {
-    const router = useRouter();
 
     // State for hover effects
     const [hoveredButton, setHoveredButton] = useState<string | null>(null);
