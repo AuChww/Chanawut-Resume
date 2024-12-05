@@ -31,7 +31,7 @@ function Navbar() {
                                 Please Adjust to Horizontal
                             </div>
                         )}
-                        <p className="text-4xl text-white pr-4 mr-2" onClick={handleClick}>
+                        <p className="text-4xl text-white pr-4" onClick={handleClick}>
                             <BiMobileLandscape />
                         </p>
                     </div>
