@@ -69,7 +69,7 @@ export default function University() {
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1 ">
+            <div className="space-y-1 mb-20 lg:mb-0">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
