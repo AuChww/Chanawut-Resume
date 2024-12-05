@@ -262,7 +262,7 @@ export default function Main() {
             </section>
 
             {/* Side Navigation */}
-            <div className="fixed top-1/3 right-10 z-50 flex flex-col space-y-4">
+            <div className="fixed top-1/3 right-6 z-50 flex flex-col space-y-4">
                 {["Stack", "University", "Internship"].map((section) => (
                     <div
                         key={section}
