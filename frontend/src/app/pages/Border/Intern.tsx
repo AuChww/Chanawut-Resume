@@ -48,7 +48,7 @@ export default function Intern() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-40">
+        <div className="h-full bg-zinc-800 p-6 z-40 overflow-y-auto">
 
             {/* Company Information */}
             <div className="mb-4">
@@ -68,7 +68,7 @@ export default function Intern() {
                                     key={imgIndex}
                                     src={image}
                                     alt={project.title}
-                                    className="w-auto h-12 mx-1 object-cover rounded-lg border-4 border-gray-600"
+                                    className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
                                 />
                             ))}
                         </div>

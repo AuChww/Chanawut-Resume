@@ -84,7 +84,7 @@ export default function Stack() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-40">
+        <div className="h-full bg-zinc-800 p-6 z-40 overflow-y-auto">
 
             {/* Company Information */}
             <div className="mb-2">
@@ -102,7 +102,7 @@ export default function Stack() {
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1">
+            <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
@@ -113,7 +113,7 @@ export default function Stack() {
                                     key={imgIndex}
                                     src={image}
                                     alt={project.title}
-                                    className="w-auto h-9 w-9 mx-1 object-cover rounded-lg border-2 mt-1 border-gray-600"
+                                    className="w-auto h-auto w-9 mx-1 object-cover rounded-lg border-2 mt-1 border-gray-600"
                                 />
                             ))}
                         </div>

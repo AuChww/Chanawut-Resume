@@ -124,7 +124,7 @@ export default function Main() {
                         alt="Profile"
                         width={2000}
                         height={2000}
-                        className="h-full w-full object-cover"
+                        className="h-full w-auto object-cover"
                     />
                     <div
                         className={`z-50 absolute text-[150px] text-white flex items-end ${isVisible ? "animate-fade-up duration-1000 animate-infinite" : "opacity-0"

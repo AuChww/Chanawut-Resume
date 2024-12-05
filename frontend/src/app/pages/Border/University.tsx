@@ -58,7 +58,7 @@ export default function University() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-40">
+        <div className="h-full bg-zinc-800 p-6 z-40 overflow-y-auto">
 
             {/* Company Information */}
             <div className="mb-4">
@@ -69,12 +69,29 @@ export default function University() {
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1">
+            <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
                         <div className="w-1/2 pr-4 mt-1">
-                            <div className=" mx-1">
+                            <div className=" flex grid grid-cols-4">
+                                {/* Loop over images for each project */}
+                                {project.images.map((image, imgIndex) => (
+                                    <img
+                                        key={imgIndex}
+                                        src={image}
+                                        alt={project.title}
+                                        className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                        <div className="w-1/2 pl-4">
+                            <h3 className="text-md font-semibold text-white">{project.title}</h3>
+                            <p className="text-xs text-gray-300 mt-2">{project.description}</p>
+                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
+                            {/* Buttons for project links */}
+                            <div className="mt-2">
                                 {project.link.map((link, linkIndex) => (
                                     <a
                                         key={linkIndex}
@@ -87,23 +104,6 @@ export default function University() {
                                     </a>
                                 ))}
                             </div>
-                            <div className="mt-2 flex grid grid-cols-4">
-                                {/* Loop over images for each project */}
-                                {project.images.map((image, imgIndex) => (
-                                    <img
-                                        key={imgIndex}
-                                        src={image}
-                                        alt={project.title}
-                                        className="w-auto h-12 mx-1 object-cover rounded-lg border-4 border-gray-600"
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                        <div className="w-1/2 pl-4">
-                            <h3 className="text-md font-semibold text-white">{project.title}</h3>
-                            <p className="text-xs text-gray-300 mt-2">{project.description}</p>
-                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
-                            {/* Buttons for project links */}
                         </div>
                     </div>
                 ))}
