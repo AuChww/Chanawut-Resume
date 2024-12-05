@@ -3,10 +3,11 @@ export default function Intern() {
     const projects = [
         {
             title: "Warehouse Management System",
-            description: "Tools : .NET",
+            description: "Tools : .NET, MS SQL Server",
             role: "Responsibilities : Backend of the permission system",
             images: [
-                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png"
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
+                "https://www.geekandjob.com/uploads/wiki/43b8c92d2a8fcd2a95ae6bf30c18494dae92467a.png"
             ]
         },
         {
@@ -31,7 +32,8 @@ export default function Intern() {
             images: [
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s",
-                "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png"
+                "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png",
             ]
         },
         {
@@ -39,23 +41,18 @@ export default function Intern() {
             description: "Tools : .NET, RabbitMQ",
             role: "Responsibilities : Tune performance the pos system",
             images: ["https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/1024px-Microsoft_.NET_logo.svg.png",
-                "https://www.rabbitmq.com/assets/files/rabbitmq-logo-e91cacd38fcef5219149bc5cfa10b384.svg"
+                "https://www.rabbitmq.com/assets/files/rabbitmq-logo-e91cacd38fcef5219149bc5cfa10b384.svg",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png",
             ]
         }
     ];
 
     return (
         <div className="h-full bg-zinc-800 p-6 z-50">
-            {/* Header Section */}
-            <div className="flex justify-between mb-2">
-                <div></div>
-                <div className="text-4xl text-white font-semibold">Internship</div>
-                <div></div>
-            </div>
 
             {/* Company Information */}
             <div className="mb-4">
-                <h2 className="text-xl font-semibold text-white mb-2">TCC Technology Co., Ltd.</h2>
+                <h2 className="text-xl font-semibold text-white mt-1">TCC Technology Co., Ltd. Internship</h2>
                 <p className="text-md text-gray-300">FullStack Developer</p>
             </div>
 
@@ -64,14 +61,14 @@ export default function Intern() {
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
-                        <div className="w-1/2 pr-4 flex">
+                        <div className="w-1/2 pr-4 flex grid grid-cols-4">
                             {/* Loop over images for each project */}
                             {project.images.map((image, imgIndex) => (
                                 <img
                                     key={imgIndex}
                                     src={image}
                                     alt={project.title}
-                                    className="w-auto h-16 mx-1 object-cover rounded-lg border-4 border-gray-600"
+                                    className="w-auto h-12 mx-1 object-cover rounded-lg border-4 border-gray-600"
                                 />
                             ))}
                         </div>

@@ -28,7 +28,8 @@ export default function University() {
             images: [
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhoVwuJmtF1Lu4t9WcsZ7fESV9KdIQ7pVHw&s",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW1AvoJXu1NMIvNfwIWMLEX0xp7ZyQ11RjoQ&s",
-                "https://www.svgrepo.com/show/374118/tailwind.svg"
+                "https://www.svgrepo.com/show/374118/tailwind.svg",
+                "https://develop365.gitlab.io/nuxtjs-2.8.X-doc/en/logos/nuxt-icon-white.png",
             ],
             link: [
                 { name: "Frontend", url: "https://github.com/AuChww/sa-project-front" },
@@ -39,31 +40,32 @@ export default function University() {
             title: "System Analysis Project",
             description: "",
             role: "Responsibilities : Business Flow, ER diagram, Use Case Diagram",
-            images: ["https://thumbs.dreamstime.com/b/icon-doc-143592755.jpg"],
+            images: ["https://thumbs.dreamstime.com/b/icon-doc-143592755.jpg",
+                "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png",
+                "https://store-images.s-microsoft.com/image/apps.53864.57d6cb45-ac61-4cde-bac9-73e3a2dfec4c.f69214f2-c4a1-4e7d-9184-e334133d259e.9b6e53ce-69ec-417b-bdde-fda060962f77.png",
+            ],
             link: [{ name: "Doc", url: "https://docs.google.com/document/d/1aghDKiRVmnBj_UKUSKRFGDN-PsXuDzC9cDop3mFYDgY/edit?tab=t.0" }]
         },
         {
             title: "Software Testing Project",
             description: "",
             role: "Responsibilities : Test Flow, Test Case, Test Script, Test Result, Incident Report",
-            images: ["https://thumbs.dreamstime.com/b/icon-doc-143592755.jpg"],
+            images: ["https://thumbs.dreamstime.com/b/icon-doc-143592755.jpg",
+                "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png"
+            ],
             link: [{ name: "Doc", url: "https://docs.google.com/document/d/16bWHH7FWhVopiuupsEKJX6jB4rKVAS_0qUiVMqqj5Jk/edit?tab=t.0" }]
         }
     ];
 
     return (
         <div className="h-full bg-zinc-800 p-6 z-50">
-            {/* Header Section */}
-            <div className="flex justify-between mb-2">
-                <div></div>
-                <div className="text-4xl text-white font-semibold">University</div>
-                <div></div>
-            </div>
 
             {/* Company Information */}
             <div className="mb-4">
-                <h2 className="text-xl font-semibold text-white mb-2">Kasetsart University</h2>
-                <p className="text-md text-gray-300">Computer Science Project Subject</p>
+                <h2 className="text-xl font-semibold text-white mt-1">Kasetsart University</h2>
+                <div className="flex justify-between">
+                    <p className="text-md text-gray-300">Computer Science Project</p>
+                </div>
             </div>
 
             {/* Projects Section */}
@@ -71,14 +73,14 @@ export default function University() {
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
-                        <div className="w-1/2 pr-4 flex">
+                        <div className="w-1/2 pr-4 flex grid grid-cols-4">
                             {/* Loop over images for each project */}
                             {project.images.map((image, imgIndex) => (
                                 <img
                                     key={imgIndex}
                                     src={image}
                                     alt={project.title}
-                                    className="w-auto h-16 mx-1 object-cover rounded-lg border-4 border-gray-600"
+                                    className="w-auto h-12 mx-1 object-cover rounded-lg border-4 border-gray-600"
                                 />
                             ))}
                         </div>

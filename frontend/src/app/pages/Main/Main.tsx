@@ -72,7 +72,7 @@ export default function Main() {
             <section id="main" className="h-screen grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 items-center justify-center snap-start flex">
                 <div className={`text-center lg:mt-8 md:mt-8 mt-80 z-10 `}
                 >
-                    <h1 className="text-4xl font-bold">Chanawut Wuttinun</h1>
+                    <h1 className="text-4xl font-bold">Chanawut Wuttinun (Au)</h1>
                     <p className="mt-4">Full Stack Developer | Passionate Learner</p>
                     <div className="flex justify-center space-x-4 mt-6">
                         <Link href="https://github.com/AuChww"
@@ -121,23 +121,65 @@ export default function Main() {
 
             {/* Stack Section */}
             <section id="Stack" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
-                <div className="lg:relative md:relative absolute"></div>
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700`}
+                >
+                    <img
+                        src="https://pbs.twimg.com/media/FVVrqWCUcAASp31.jpg:large"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-2/3 w-full object-cover ${visibleSections.Stack ? "opacity-100 animate-fade-right" : "opacity-0"}`}
+                    />
+                    <img
+                        src="https://kuic.ku.ac.th/wp-content/uploads/2022/10/about-kuic-photo-1.jpg"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-1/3 w-full object-cover ${visibleSections.Stack ? "opacity-100 animate-fade-left" : "opacity-0"}`}
+                    />
+                </div>
                 <Stack />
+                <div
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700`}
+                >
+                    <Image
+                        src="/images/linkin.png"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-1/3 w-full object-cover ${visibleSections.Stack ? "opacity-100 animate-fade-left" : "opacity-0"}`}
+                    />
+                    <Image
+                        src="/images/Resume.png"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-2/3 w-full object-cover ${visibleSections.Stack ? "opacity-100 animate-fade-up" : "opacity-0"}`}
+                    />
+                </div>
             </section>
 
             {/* University Section */}
             <section id="University" className="h-screen grid lg:grid-cols-3 md:grid-cols-3 grid-cols-1 justify-center snap-start flex">
                 <div
-                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 ${visibleSections.University ? "opacity-100 animate-fade-left" : "opacity-0"
-                        }`}
+                    className={`lg:relative md:relative absolute h-screen transition-opacity duration-700`}
                 >
                     <Image
-                        src="/images/Profile/Profile.jpg"
+                        src="/images/work/image2.png"
                         alt="Profile"
                         width={2000}
                         height={2000}
-                        className="h-full w-full object-cover"
+                        className={`h-1/3 w-full object-cover ${visibleSections.University ? "opacity-100 animate-fade-left" : "opacity-0"}`}
                     />
+                    <Image
+                        src="/images/work/image1.png"
+                        alt="Profile"
+                        width={2000}
+                        height={2000}
+                        className={`h-2/3 w-full object-cover ${visibleSections.University ? "opacity-100 animate-fade-right" : "opacity-0"}`}
+                    />
+
                 </div>
                 <University />
                 <div
@@ -178,7 +220,7 @@ export default function Main() {
                         alt="Profile"
                         width={2000}
                         height={2000}
-                        className="h-auto w-full object-cover"
+                        className="h-full w-full object-cover"
                     />
                 </div>
                 <Intern />
@@ -186,8 +228,8 @@ export default function Main() {
                     className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 
                         `}
                 >
-                    <Image
-                        src="/images/Intern/Intern3.jpg"
+                    <img
+                        src="https://moneyandbanking.co.th/wp-content/uploads/2023/04/tcc.jpg"
                         alt="Profile"
                         width={2000}
                         height={2000}
