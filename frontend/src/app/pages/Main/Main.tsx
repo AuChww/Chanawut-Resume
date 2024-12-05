@@ -9,6 +9,7 @@ import Stack from "../Border/Stack";
 import { FaUniversity } from "react-icons/fa";
 import { GiJourney } from "react-icons/gi";
 import { FaBookOpen } from "react-icons/fa";
+import { MdSwipeDown } from "react-icons/md";
 
 export default function Main() {
 
@@ -66,6 +67,16 @@ export default function Main() {
         }
     };
 
+    const [isVisible, setIsVisible] = useState(true);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setIsVisible(false); // Hide after the animation
+        }, 2500); // Match animation duration (1.5s)
+
+        return () => clearTimeout(timeout); // Cleanup on component unmount
+    }, []);
+
     return (
         <div className="relative h-screen bg-gradient-to-b from-gray-800 to-black text-white snap-y snap-mandatory overflow-y-scroll">
             {/* Main Section */}
@@ -106,7 +117,6 @@ export default function Main() {
                             </div>
                         </Link>
                     </div>
-                    <p className="mt-1 text-zinc-500">Adjust horizontal to see more.</p>
                 </div>
                 <div className="h-full md:relative absolute items-center justify-center flex lg:relative">
                     <Image
@@ -116,6 +126,12 @@ export default function Main() {
                         height={2000}
                         className="h-full w-full object-cover"
                     />
+                    <div
+                        className={`z-50 absolute text-[150px] text-white flex items-end ${isVisible ? "animate-fade-up duration-1000 animate-infinite" : "opacity-0"
+                            }`}
+                    >
+                        <MdSwipeDown />
+                    </div>
                 </div>
             </section>
 

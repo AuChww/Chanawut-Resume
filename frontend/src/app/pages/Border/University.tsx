@@ -2,7 +2,7 @@ export default function University() {
     // Example project data with multiple image URLs and links
     const projects = [
         {
-            title: "Assets System Project",
+            title: "Assets System App",
             description: "",
             role: "Responsibilities : Frontend and Backend of project and borrow feature.",
             images: [
@@ -12,7 +12,7 @@ export default function University() {
             link: [{ name: "GitHub", url: "https://github.com/CS211-652/cs211-652-project-aeiou" }]
         },
         {
-            title: "Event Management System Webtech Project",
+            title: "Event Management Web-App",
             description: "",
             role: "Responsibilities : UX/UI design, Frontend of event feature, Home page",
             images: [
@@ -22,7 +22,7 @@ export default function University() {
             link: [{ name: "GitHub", url: "https://github.com/naiithink/ku-2023-01418442-nak-muay" }]
         },
         {
-            title: "E-Commerce Webtech Project",
+            title: "E-Commerce Web-App",
             description: "",
             role: "Responsibilities : Grafana Dashboard and Alert rules settings",
             images: [
