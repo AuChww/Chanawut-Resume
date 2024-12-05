@@ -262,7 +262,7 @@ export default function Main() {
             </section>
 
             {/* Side Navigation */}
-            <div className="fixed top-1/3 right-10 z-20 flex flex-col space-y-4">
+            <div className="fixed top-1/3 right-10 z-50 flex flex-col space-y-4">
                 {["Stack", "University", "Internship"].map((section) => (
                     <div
                         key={section}
@@ -271,11 +271,11 @@ export default function Main() {
                         onMouseLeave={() => setHoveredButton(null)}
                         onClick={() => scrollToSection(section)}>
                         {/* Button */}
-                        <button className="w-12 h-12 rounded-full bg-gray-800 hover:bg-gray-600 transition shadow-lg flex items-center justify-center">
+                        <button className="w-10 h-10 rounded-full bg-zinc-800 hover:bg-zinc-600 opacity-60 transition shadow-lg flex items-center justify-center">
                             {/* Set icon based on section */}
-                            {section === "Stack" && <FaBookOpen className="h-6 w-6 text-white" />}
-                            {section === "University" && <FaUniversity className="h-6 w-6 text-white" />}
-                            {section === "Internship" && <GiJourney className="h-6 w-6 text-white" />}
+                            {section === "Stack" && <FaBookOpen className="h-6 w-6 text-white opacity-100" />}
+                            {section === "University" && <FaUniversity className="h-6 w-6 text-white opacity-100" />}
+                            {section === "Internship" && <GiJourney className="h-6 w-6 text-white opacity-100" />}
                         </button>
                         {/* Hover Content */}
                         {hoveredButton === section && (

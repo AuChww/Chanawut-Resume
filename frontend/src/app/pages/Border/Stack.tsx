@@ -84,7 +84,7 @@ export default function Stack() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-50">
+        <div className="h-full bg-zinc-800 p-6 z-40">
 
             {/* Company Information */}
             <div className="mb-2">
