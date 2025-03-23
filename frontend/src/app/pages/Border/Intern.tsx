@@ -57,23 +57,25 @@ export default function Intern() {
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1 mb-20 lg:mb-0">
+            <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
-                        <div className="w-1/2 pr-4 flex grid grid-cols-4">
-                            {/* Loop over images for each project */}
-                            {project.images.map((image, imgIndex) => (
-                                <img
-                                    key={imgIndex}
-                                    src={image}
-                                    alt={project.title}
-                                    className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
-                                />
-                            ))}
+                        <div className="w-1/2 pr-4 mt-1">
+                            <div className=" flex grid grid-cols-5 gap-x-0.5">
+                                {/* Loop over images for each project */}
+                                {project.images.map((image, imgIndex) => (
+                                    <img
+                                        key={imgIndex}
+                                        src={image}
+                                        alt={project.title}
+                                        className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
+                                    />
+                                ))}
+                            </div>
                         </div>
                         <div className="w-1/2 pl-4">
-                            <h3 className="text-md font-semibold text-white">{project.title}</h3>
+                            <h3 className="text-sm font-semibold text-white">{project.title}</h3>
                             <p className="text-xs text-gray-300 mt-2">{project.description}</p>
                             <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
                         </div>

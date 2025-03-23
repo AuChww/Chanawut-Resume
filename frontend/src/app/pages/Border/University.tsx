@@ -2,6 +2,18 @@ export default function University() {
     // Example project data with multiple image URLs and links
     const projects = [
         {
+            title: "KU Crowd Monitoring System",
+            description: "Graduation Project",
+            role: "Responsibilities : Model, Database, Frontend and Backend of project",
+            images: [
+                "https://cdn.prod.website-files.com/646dd1f1a3703e451ba81ecc/64994922cf2a6385a4bf4489_UltralyticsYOLO_mark_blue.svg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s",
+                "https://www.kindpng.com/picc/m/188-1882559_python-flask-hd-png-download.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/2048px-DBeaver_logo.svg.png",
+            ],
+            link: [{ name: "GitHub", url: "" }]
+        },
+        {
             title: "Assets System App",
             description: "",
             role: "Responsibilities : Frontend and Backend of project and borrow feature.",
@@ -69,12 +81,12 @@ export default function University() {
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1 mb-20 lg:mb-0">
+            <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
                         <div className="w-1/2 pr-4 mt-1">
-                            <div className=" flex grid grid-cols-4">
+                            <div className=" flex grid grid-cols-5 gap-x-0.5">
                                 {/* Loop over images for each project */}
                                 {project.images.map((image, imgIndex) => (
                                     <img
@@ -85,13 +97,8 @@ export default function University() {
                                     />
                                 ))}
                             </div>
-                        </div>
-                        <div className="w-1/2 pl-4">
-                            <h3 className="text-md font-semibold text-white">{project.title}</h3>
-                            <p className="text-xs text-gray-300 mt-2">{project.description}</p>
-                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
                             {/* Buttons for project links */}
-                            <div className="mt-2">
+                            <div className="mt-3">
                                 {project.link.map((link, linkIndex) => (
                                     <a
                                         key={linkIndex}
@@ -104,6 +111,11 @@ export default function University() {
                                     </a>
                                 ))}
                             </div>
+                        </div>
+                        <div className="w-1/2 pl-4">
+                            <h3 className="text-sm font-semibold text-white">{project.title}</h3>
+                            <p className="text-xs text-yellow-300 mt-2">{project.description}</p>
+                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
                         </div>
                     </div>
                 ))}

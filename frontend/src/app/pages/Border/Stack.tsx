@@ -2,6 +2,16 @@ export default function Stack() {
     // Example project data with multiple image URLs and links
     const projects = [
         {
+            title: "Ai Library",
+            description: "",
+            role: "In my graduation project, I used Yolo, but most of the time I have experience in making decision trees, Knn, and SVR.",
+            images: [
+                "https://cdn.prod.website-files.com/646dd1f1a3703e451ba81ecc/64994922cf2a6385a4bf4489_UltralyticsYOLO_mark_blue.svg",
+                "https://avatars.githubusercontent.com/u/17349883?s=200&v=4",
+            ],
+            link: []
+        },
+        {
             title: "Programming Language",
             description: "",
             role: "Even though my aptitude lies more towards frontend, the internship allowed me to develop multiple skills simultaneously.",
@@ -21,9 +31,9 @@ export default function Stack() {
             link: []
         },
         {
-            title: "Framework & Library",
+            title: "Web App Framework & Lib",
             description: "",
-            role: "My most used framework is React, which is popular now. During my internship I used the .NET framework constantly.",
+            role: "My most used framework is NEXT.js, which is popular now. During my internship I used the .NET framework constantly.",
             images: [
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s",
                 "https://www.cdnlogo.com/logos/r/85/react.svg",
@@ -31,6 +41,7 @@ export default function Stack() {
                 "https://develop365.gitlab.io/nuxtjs-2.8.X-doc/en/logos/nuxt-icon-white.png",
                 "https://www.svgrepo.com/show/374118/tailwind.svg",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhoVwuJmtF1Lu4t9WcsZ7fESV9KdIQ7pVHw&s",
+                "https://www.kindpng.com/picc/m/188-1882559_python-flask-hd-png-download.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Microsoft_.NET_logo.svg/2048px-Microsoft_.NET_logo.svg.png",
                 "https://medusajs.com/images/plugin-icons/medusa-plugin-meilisearch-icon.svg",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQD0B_3durHqFG9MXTsL4zrzrTGOttsibiOvA&s",
@@ -70,13 +81,16 @@ export default function Stack() {
         {
             title: "Other Tools",
             description: "",
-            role: "In addition to developing web apps, I also have the opportunity to monitor and animate.",
-            images: ["https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
+            role: "In addition to developing web apps, I also have the opportunity to Image processing, monitor and animate.",
+            images: [
+                "https://images.seeklogo.com/logo-png/33/1/matlab-logo-png_seeklogo-333704.png",
+                "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
                 "https://cdn.icon-icons.com/icons2/2108/PNG/512/grafana_icon_130916.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/2066px-Prometheus_software_logo.svg.png",
                 "https://seeklogo.com/images/S/swaggerhub-logo-52BE4455D6-seeklogo.com.png",
                 "https://www.svgrepo.com/show/354202/postman-icon.svg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1051px-Adobe_Premiere_Pro_CC_icon.svg.png",
+                "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/2048px-DBeaver_logo.svg.png",
                 "https://cdn.iconscout.com/icon/free/png-256/free-blender-technology-logo-social-media-logo-download-svg-png-gif-flat-icon-logos-technology-logo-vol-1-pack-blender-logo-icon-2944729.png?f=webp&w=256",
             ],
             link: []
@@ -98,15 +112,15 @@ export default function Stack() {
                     B.S. Computer Science
                     June 2021 - Present</p>
                 <p className="text-xs text-gray-300 mt-1">TCC technology Internship 2024, Full-stack Developer</p>
-                <h2 className="text-xl font-semibold text-white mt-2">Technical Skills</h2>
+                <h2 className="text-xl font-semibold text-white mt-4">Technical Skills</h2>
             </div>
 
             {/* Projects Section */}
-            <div className="space-y-1 mb-20 lg:mb-0">
+            <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
                     <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
-                        <div className="w-1/2 pr-4 flex grid grid-cols-5">
+                        <div className="w-1/2 pr-4 gap-x-0.5 flex grid grid-cols-7">
                             {/* Loop over images for each project */}
                             {project.images.map((image, imgIndex) => (
                                 <img
@@ -118,7 +132,7 @@ export default function Stack() {
                             ))}
                         </div>
                         <div className="w-1/2 pl-4">
-                            <h3 className="text-md font-semibold text-white">{project.title}</h3>
+                            <h3 className="text-sm font-semibold text-white">{project.title}</h3>
                             <p className="text-xs text-gray-300 mt-2">{project.description}</p>
                             <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
                             {/* Buttons for project links */}
