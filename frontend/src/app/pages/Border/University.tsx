@@ -1,3 +1,5 @@
+import { CiLocationArrow1 } from "react-icons/ci";
+
 export default function University() {
     // Example project data with multiple image URLs and links
     const projects = [
@@ -70,10 +72,10 @@ export default function University() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-40 overflow-y-auto">
+        <div className="h-full bg-zinc-800 p-2 z-40 overflow-y-auto">
 
             {/* Company Information */}
-            <div className="mb-4">
+            <div className="mb-4 mt-8">
                 <h2 className="text-xl font-semibold text-white mt-1">Kasetsart University</h2>
                 <div className="flex justify-between">
                     <p className="text-md text-gray-300">Computer Science Project</p>
@@ -84,7 +86,7 @@ export default function University() {
             <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
-                    <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
+                    <div key={index} className="flex items-center justify-between border-b-4 border-zinc-700 pb-1.5">
                         <div className="w-1/2 pr-4 mt-1">
                             <div className=" flex grid grid-cols-5 gap-x-0.5">
                                 {/* Loop over images for each project */}
@@ -98,24 +100,29 @@ export default function University() {
                                 ))}
                             </div>
                             {/* Buttons for project links */}
-                            <div className="mt-3">
+                            <div className="md:mt-2 mt-1 ml-1">
                                 {project.link.map((link, linkIndex) => (
-                                    <a
-                                        key={linkIndex}
-                                        href={link.url}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                        className="mr-2 inline-block px-2 py-1 text-xs font-semibold text-zinc-400 bg-zinc-700 rounded hover:bg-zinc-600 duration-300 hover:scale-110"
-                                    >
-                                        {link.name}
-                                    </a>
+                                    <div className="inline-block mx-1 px-2 py-1 text-zinc-400 bg-zinc-700 rounded hover:bg-zinc-600 duration-300 hover:scale-110 ">
+                                        <div className="flex">
+                                            <a
+                                                key={linkIndex}
+                                                href={link.url}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="mr-1 md:text-xs text-[9px] font-semibold "
+                                            >
+                                                {link.name}
+                                            </a>
+                                            <CiLocationArrow1 className=" md:text-sm text-[12px]"/>
+                                        </div>
+                                    </div>
                                 ))}
                             </div>
                         </div>
                         <div className="w-1/2 pl-4">
                             <h3 className="text-sm font-semibold text-white">{project.title}</h3>
-                            <p className="text-xs text-yellow-300 mt-2">{project.description}</p>
-                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
+                            <p className="md:text-xs text-[9px] text-yellow-300 mt-1">{project.description}</p>
+                            <p className="md:text-xs text-[9px] text-gray-300 mt-1 italic">{project.role}</p>
                         </div>
                     </div>
                 ))}

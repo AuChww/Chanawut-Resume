@@ -48,10 +48,10 @@ export default function Intern() {
     ];
 
     return (
-        <div className="h-full bg-zinc-800 p-6 z-40 overflow-y-auto">
+        <div className="h-full bg-zinc-800 p-2 z-40 overflow-y-auto">
 
             {/* Company Information */}
-            <div className="mb-4">
+            <div className="mb-4 mt-8">
                 <h2 className="text-xl font-semibold text-white mt-1">TCC Technology Co., Ltd. Internship</h2>
                 <p className="text-md text-gray-300">FullStack Developer</p>
             </div>
@@ -60,7 +60,7 @@ export default function Intern() {
             <div className="space-y-1 ">
                 {/* Loop over projects to display them */}
                 {projects.map((project, index) => (
-                    <div key={index} className="flex items-center justify-between border-b-4 border-gray-500 pb-4">
+                    <div key={index} className="flex items-center justify-between border-b-4 border-zinc-700 pb-1.5">
                         <div className="w-1/2 pr-4 mt-1">
                             <div className=" flex grid grid-cols-5 gap-x-0.5">
                                 {/* Loop over images for each project */}
@@ -76,8 +76,8 @@ export default function Intern() {
                         </div>
                         <div className="w-1/2 pl-4">
                             <h3 className="text-sm font-semibold text-white">{project.title}</h3>
-                            <p className="text-xs text-gray-300 mt-2">{project.description}</p>
-                            <p className="text-xs text-gray-300 mt-2 italic">{project.role}</p>
+                            <p className="md:text-xs text-[9px] text-gray-300 mt-1">{project.description}</p>
+                            <p className="md:text-xs text-[9px] text-gray-300 mt-1 italic">{project.role}</p>
                         </div>
                     </div>
                 ))}
