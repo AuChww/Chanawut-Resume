@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Intern() {
     // Example project data with multiple image URLs
     const projects = [
@@ -65,10 +67,12 @@ export default function Intern() {
                             <div className=" flex grid grid-cols-5 gap-x-0.5">
                                 {/* Loop over images for each project */}
                                 {project.images.map((image, imgIndex) => (
-                                    <img
+                                    <Image
                                         key={imgIndex}
                                         src={image}
                                         alt={project.title}
+                                        height={100}
+                                        width={100}
                                         className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
                                     />
                                 ))}

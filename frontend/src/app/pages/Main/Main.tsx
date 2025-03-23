@@ -140,14 +140,14 @@ export default function Main() {
                 <div
                     className={`lg:relative md:relative absolute h-screen transition-opacity duration-700`}
                 >
-                    <img
+                    <Image
                         src="https://pbs.twimg.com/media/FVVrqWCUcAASp31.jpg:large"
                         alt="Profile"
                         width={2000}
                         height={2000}
                         className={`h-2/3 w-full object-cover ${visibleSections.Stack ? "opacity-100 animate-fade-right" : "opacity-0"}`}
                     />
-                    <img
+                    <Image
                         src="https://kuic.ku.ac.th/wp-content/uploads/2022/10/about-kuic-photo-1.jpg"
                         alt="Profile"
                         width={2000}
@@ -244,7 +244,7 @@ export default function Main() {
                     className={`lg:relative md:relative absolute h-screen transition-opacity duration-700 
                         `}
                 >
-                    <img
+                    <Image
                         src="https://moneyandbanking.co.th/wp-content/uploads/2023/04/tcc.jpg"
                         alt="Profile"
                         width={2000}

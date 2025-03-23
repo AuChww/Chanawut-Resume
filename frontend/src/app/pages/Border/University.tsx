@@ -1,4 +1,6 @@
 import { CiLocationArrow1 } from "react-icons/ci";
+import Image from "next/image";
+
 
 export default function University() {
     // Example project data with multiple image URLs and links
@@ -8,7 +10,7 @@ export default function University() {
             description: "Graduation Project",
             role: "Responsibilities : Model, Database, Frontend and Backend of project",
             images: [
-                "https://cdn.prod.website-files.com/646dd1f1a3703e451ba81ecc/64994922cf2a6385a4bf4489_UltralyticsYOLO_mark_blue.svg",
+                "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/odf4kg05ycxdtwz2pfcw",
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV9uzErWz9EXqZDxZ5lP9aYpMz8eK6rr5X3w&s",
                 "https://www.kindpng.com/picc/m/188-1882559_python-flask-hd-png-download.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/2048px-DBeaver_logo.svg.png",
@@ -91,10 +93,12 @@ export default function University() {
                             <div className=" flex grid grid-cols-5 gap-x-0.5">
                                 {/* Loop over images for each project */}
                                 {project.images.map((image, imgIndex) => (
-                                    <img
+                                    <Image
                                         key={imgIndex}
                                         src={image}
                                         alt={project.title}
+                                        height={100}
+                                        width={100}
                                         className="w-12 h-auto mx-1 object-cover rounded-lg border-4 border-gray-600"
                                     />
                                 ))}
@@ -102,10 +106,12 @@ export default function University() {
                             {/* Buttons for project links */}
                             <div className="md:mt-2 mt-1 ml-1">
                                 {project.link.map((link, linkIndex) => (
-                                    <div className="inline-block mx-1 px-2 py-1 text-zinc-400 bg-zinc-700 rounded hover:bg-zinc-600 duration-300 hover:scale-110 ">
+                                    <div
+                                        key={linkIndex}
+                                        className="inline-block mx-1 px-2 py-1 text-zinc-400 bg-zinc-700 rounded hover:bg-zinc-600 duration-300 hover:scale-110 "
+                                    >
                                         <div className="flex">
                                             <a
-                                                key={linkIndex}
                                                 href={link.url}
                                                 target="_blank"
                                                 rel="noopener noreferrer"
@@ -113,7 +119,7 @@ export default function University() {
                                             >
                                                 {link.name}
                                             </a>
-                                            <CiLocationArrow1 className=" md:text-sm text-[12px]"/>
+                                            <CiLocationArrow1 className=" md:text-sm text-[12px]" />
                                         </div>
                                     </div>
                                 ))}

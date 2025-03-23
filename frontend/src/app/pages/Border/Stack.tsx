@@ -1,3 +1,6 @@
+import Image from "next/image";
+
+
 export default function Stack() {
     // Example project data with multiple image URLs and links
     const projects = [
@@ -6,7 +9,7 @@ export default function Stack() {
             description: "",
             role: "In my graduation project, I used Yolo, but most of the time I have experience in making decision trees, Knn, and SVR.",
             images: [
-                "https://cdn.prod.website-files.com/646dd1f1a3703e451ba81ecc/64994922cf2a6385a4bf4489_UltralyticsYOLO_mark_blue.svg",
+                "https://images.crunchbase.com/image/upload/c_pad,f_auto,q_auto:eco,dpr_1/odf4kg05ycxdtwz2pfcw",
                 "https://avatars.githubusercontent.com/u/17349883?s=200&v=4",
             ],
             link: []
@@ -59,7 +62,7 @@ export default function Stack() {
             images: [
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/993px-Postgresql_elephant.svg.png",
                 "https://www.geekandjob.com/uploads/wiki/43b8c92d2a8fcd2a95ae6bf30c18494dae92467a.png",
-                "https://seeklogo.com/images/M/mysql-logo-B4943FE6DD-seeklogo.com.png"
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGGT_pnMHJdps9fGjcDaFSqcfFxO2E7BQk4g&s"
             ],
             link: [
             ]
@@ -83,11 +86,11 @@ export default function Stack() {
             description: "",
             role: "In addition to developing web apps, I also have the opportunity to Image processing, monitor and animate.",
             images: [
-                "https://images.seeklogo.com/logo-png/33/1/matlab-logo-png_seeklogo-333704.png",
+                "https://tsgdoc.socsci.ru.nl/images/2/21/Matlab_Logo.png",
                 "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
                 "https://cdn.icon-icons.com/icons2/2108/PNG/512/grafana_icon_130916.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/2066px-Prometheus_software_logo.svg.png",
-                "https://seeklogo.com/images/S/swaggerhub-logo-52BE4455D6-seeklogo.com.png",
+                "https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png",
                 "https://www.svgrepo.com/show/354202/postman-icon.svg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1051px-Adobe_Premiere_Pro_CC_icon.svg.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/2048px-DBeaver_logo.svg.png",
@@ -123,10 +126,12 @@ export default function Stack() {
                         <div className="w-1/2 pr-4 gap-x-0.5 flex grid grid-cols-6">
                             {/* Loop over images for each project */}
                             {project.images.map((image, imgIndex) => (
-                                <img
+                                <Image
                                     key={imgIndex}
                                     src={image}
                                     alt={project.title}
+                                    height={100}
+                                    width={100}
                                     className="w-auto h-auto w-9 mx-1 object-cover rounded-lg border-2 mt-1 border-gray-600"
                                 />
                             ))}
