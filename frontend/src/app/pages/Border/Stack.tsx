@@ -72,7 +72,7 @@ export default function Stack() {
             description: "",
             role: "Due to joining multiple teams, I utilized various communication tools.",
             images: [
-                "https://static-00.iconduck.com/assets.00/github-icon-512x512-bgdhvgjm.png",
+                "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png",
                 "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png",
                 "https://w7.pngwing.com/pngs/885/629/png-transparent-miro-hd-logo.png",
                 "https://www.cdnlogo.com/logos/t/55/trello.svg",
@@ -90,7 +90,7 @@ export default function Stack() {
                 "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/97_Docker_logo_logos-512.png",
                 "https://cdn.icon-icons.com/icons2/2108/PNG/512/grafana_icon_130916.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Prometheus_software_logo.svg/2066px-Prometheus_software_logo.svg.png",
-                "https://static-00.iconduck.com/assets.00/swagger-icon-2048x2048-563qbzey.png",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCc_mq3wDW00Y61_3SxcQNAfEJlh8VIzSrfQ&s",
                 "https://www.svgrepo.com/show/354202/postman-icon.svg",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/1051px-Adobe_Premiere_Pro_CC_icon.svg.png",
                 "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/DBeaver_logo.svg/2048px-DBeaver_logo.svg.png",

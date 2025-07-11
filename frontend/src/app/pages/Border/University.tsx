@@ -33,7 +33,7 @@ export default function University() {
             role: "Responsibilities : UX/UI design, Frontend of event feature, Home page",
             images: [
                 "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnhoVwuJmtF1Lu4t9WcsZ7fESV9KdIQ7pVHw&s",
-                "https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png"
+                "https://cdn-icons-png.flaticon.com/512/5968/5968292.png"
             ],
             link: [{ name: "GitHub", url: "https://github.com/naiithink/ku-2023-01418442-nak-muay" }]
         },

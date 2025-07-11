@@ -33,7 +33,9 @@ const nextConfig = {
             "moneyandbanking.co.th",
             "encrypted-tbn0.gstatic.com",
             "static-00.iconduck.com",
-            "tsgdoc.socsci.ru.nl"
+            "tsgdoc.socsci.ru.nl",
+            "uxwing.com",
+            "cdn-icons-png.flaticon.com"
         ],
     },
 };
