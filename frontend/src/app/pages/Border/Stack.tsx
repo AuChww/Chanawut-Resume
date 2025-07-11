@@ -74,7 +74,7 @@ export default function Stack() {
             images: [
                 "https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/github-white-icon.png",
                 "https://cdn4.iconfinder.com/data/icons/logos-brands-in-colors/3000/figma-logo-512.png",
-                "https://w7.pngwing.com/pngs/885/629/png-transparent-miro-hd-logo.png",
+                "https://www.cdnlogo.com/logos/m/32/miro.svg",
                 "https://www.cdnlogo.com/logos/t/55/trello.svg",
                 "https://logosandtypes.com/wp-content/uploads/2023/03/ClickUp.png",
                 "https://cdn4.iconfinder.com/data/icons/logos-and-brands/512/144_Gitlab_logo_logos-512.png",
